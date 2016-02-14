@@ -2,21 +2,22 @@
 var RADIUS = 8;
 
 
-//设置截止时间
+//如果为倒计时，则在此设置截止时间
 var endTime = new Date(2016, 1, 15, 15, 0, 0);
 var curShowTimeSeconds = 0;
 
 //小球
 var balls = [];
 
-//const colors = ["#33B5E5", "#0099CC", "#AA66CC", "#9933CC", "#99CC00", "#669900", "#FFBB33", "#FF8800", "#FF4444", "#CC0000"];
+//明亮的色彩 const colors = ["#33B5E5", "#0099CC", "#AA66CC", "#9933CC", "#99CC00", "#669900", "#FFBB33", "#FF8800", "#FF4444", "#CC0000"];
 
 
-
+//初始化
 window.onload = function() {
 	var canvas = document.getElementById("canvas");
 	var context = canvas.getContext("2d");
 
+	//自适应
 	WINDOW_WIDTH = document.body.clientWidth;
 	WINDOW_HEIGHT = document.body.clientHeight;
 
@@ -27,6 +28,7 @@ window.onload = function() {
 	canvas.width = WINDOW_WIDTH;
 	canvas.height = WINDOW_HEIGHT;
 
+	//刷新
 	curShowTimeSeconds = getCurrentShowTimeSeconds();
 	setInterval(
 		function() {
@@ -94,6 +96,7 @@ function update() {
 	updateBalls();
 }
 
+//刷新每个小球状态
 function updateBalls() {
 
 	for (var i = 0; i < balls.length; i++) {
@@ -118,6 +121,7 @@ function updateBalls() {
 	}
 }
 
+//遍历，如果是1则增加小球
 function addBalls(x, y, num) {
 	for (var i = 0; i < digit[num].length; i++) {
 		for (var j = 0; j < digit[num][i].length; j++) {
@@ -127,9 +131,7 @@ function addBalls(x, y, num) {
 					y: y + i * 2 * (RADIUS + 1) + (RADIUS + 1),
 					g: 2 + Math.random(),
 					vx: Math.random() > 0.5 ? Math.random() * 20 : -Math.random() * 20,
-					//Math.pow(-1, Math.ceil(Math.random() * 1000)) * 4,
 					vy: Math.random() > 0.5 ? Math.random() * 20 : -Math.random() * 20,
-					//-5,
 					color: '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6)
 				}
 
