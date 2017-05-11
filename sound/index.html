@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>传声</title>
+  <link href="http://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+  <style>
+    html, body, .page {
+      width: 100%;
+      height: 100%;
+    }
+    .page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .weui-btn {
+      width: 50vw;
+    }
+    /*#dialog {
+      transition: all 1s;
+    }*/
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="page__bd page__bd_spacing">
+        <a href="./send.html" id="message" class="weui-btn weui-btn_primary">发送数据</a>
+        <a href="javascript:;" id="receive" class="weui-btn weui-btn_plain-primary">开始接收</a>
+        </div>
+    </div>
+
+    <div class="js_dialog" id="dialog" style="opacity: 0; display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__bd">
+              <i class="weui-loading"></i>
+              <p>正在接收中</p>
+            </div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" id="stop" class="weui-dialog__btn weui-dialog__btn_primary">停止接收</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script src="./sound.js"></script>
+  <script>
+    let SOUNDALPHABET = 'abdilpsu'
+    // On some other machine:
+    sserver = new SonicServer({alphabet: SOUNDALPHABET});
+    sserver.start()
+
+
+    document.querySelector('#receive').addEventListener('click', e => {
+      let dialog = document.querySelector('#dialog')
+      dialog.style.display = 'block'
+      dialog.style.opacity = 1
+
+      sserver.on('message', message => {
+        console.log(message);
+        let target = `http://www.${message}.com`
+        window.open(target)
+      })
+    })
+    document.querySelector("#stop").addEventListener('click', e => {
+      let dialog = document.querySelector('#dialog')
+      dialog.style.display = 'none'
+      dialog.style.opacity = 0
+
+      sserver.off()
+    })
+  </script>
+</body>
+</html>
