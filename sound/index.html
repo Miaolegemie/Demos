@@ -49,14 +49,10 @@
   <script src="./sound.js"></script>
   <script>
   try {
-
-    let test = new RingBuffer()
-    alert(test.get)
-
     let SOUNDALPHABET = 'abdilpsu'
     // On some other machine:
     sserver = new SonicServer({alphabet: SOUNDALPHABET});
-    alert(sserver.stop)
+    alert(sserver.on)
     sserver.start()
 
 
