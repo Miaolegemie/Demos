@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+canvas {
+    display: block;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+input[type=file]{
+    display: block;
+    margin: 0 auto;
+}
+
+#container {
+    width: 100%;
+    height: 80%;
+    padding: 20px 0;
+}
