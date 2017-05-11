@@ -1,4 +1,3 @@
-var audioContext = new AudioContext()
 /**
  * Encodes text as audio streams.
  * 将文本编码为音频流
@@ -15,6 +14,9 @@ function SonicSocket(params) {
   this.coder = params.coder || new SonicCoder(params); // 带参数的编码器？？？
   this.rampDuration = params.rampDuration || 0.001; // 入睡前等待时间？？？
 }
+
+var audioContext = new AudioContext()
+
 
 SonicSocket.prototype.send = function(input, opt_callback) {
   // Surround the word with start and end characters.
