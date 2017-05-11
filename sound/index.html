@@ -48,6 +48,7 @@
 
   <script src="./sound.js"></script>
   <script>
+  try {
     let SOUNDALPHABET = 'abdilpsu'
     // On some other machine:
     sserver = new SonicServer({alphabet: SOUNDALPHABET});
@@ -72,6 +73,10 @@
 
       sserver.off()
     })
+  } catch (err) {
+    alert(err)
+  }
+
   </script>
 </body>
 </html>
