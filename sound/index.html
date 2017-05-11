@@ -49,15 +49,16 @@
   <script src="./RingBuffer.js"></script>
   <script src="./SonicCoder.js"></script>
   <script src="./SonicServer.js"></script>
+  <script src="./SonicSocket.js"></script>
   <script>
   try {
     let SOUNDALPHABET = 'abdilpsu'
     // On some other machine:
     // sserver = new SonicServer({alphabet: SOUNDALPHABET});
     sserver = new SonicServer();
-    console.log(sserver.__proto__)
-    let test = new RingBuffer()
-    for(item in sserver.__proto__) {
+    console.log(SonicServer)
+    let test = new SonicSocket()
+    for(item in test.__proto__) {
       alert(item)
     }
     sserver.start()
