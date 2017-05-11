@@ -51,10 +51,11 @@
   try {
     let SOUNDALPHABET = 'abdilpsu'
     // On some other machine:
-    sserver = new SonicServer({alphabet: SOUNDALPHABET});
+    // sserver = new SonicServer({alphabet: SOUNDALPHABET});
+    sserver = new SonicServer();
     console.log(sserver.__proto__)
     let test = new RingBuffer()
-    for(item in test.__proto__) {
+    for(item in sserver.__proto__) {
       alert(item)
     }
     sserver.start()
