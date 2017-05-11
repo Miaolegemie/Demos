@@ -24,12 +24,9 @@ function SonicServer(params) {
   // How long (in ms) to wait for the next character.
   this.timeout = params.timeout || 300; // 超时 ？ 等待下一个字符的时间
   this.debug = !!params.debug; // debug 模式
-
   this.peakHistory = new RingBuffer(16); // 峰值历史（16个长度）
   this.peakTimes = new RingBuffer(16); // 峰值出现的时间 （16个长度）
-
   this.callbacks = {}; // 回调
-
   this.buffer = '';
   this.state = State.IDLE;
   this.isRunning = false;

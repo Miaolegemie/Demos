@@ -58,7 +58,7 @@
     sserver = new SonicServer();
     console.log(SonicServer)
     let test = new SonicSocket()
-    for(item in test.__proto__) {
+    for(let item in test.__proto__) {
       alert(item)
     }
     sserver.start()
