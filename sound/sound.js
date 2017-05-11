@@ -118,6 +118,10 @@ SonicCoder.prototype.freqToChar = function(freq) {
   return this.alphabet[index];
 };
 
+var State = {
+  IDLE: 1, // 空闲
+  RECV: 2  // 接收
+};
 
 var audioContext = new AudioContext()
 /**
@@ -152,10 +156,6 @@ function SonicServer(params) {
   this.iteration = 0;
 }
 
-var State = {
-  IDLE: 1, // 空闲
-  RECV: 2  // 接收
-};
 
 /**
  * Start processing the audio stream.
