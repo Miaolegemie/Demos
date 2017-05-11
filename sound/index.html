@@ -53,7 +53,8 @@
     // On some other machine:
     sserver = new SonicServer({alphabet: SOUNDALPHABET});
     console.log(sserver.__proto__)
-    for(item in sserver.__proto__) {
+    let test = new RingBuffer()
+    for(item in test.__proto__) {
       alert(item)
     }
     sserver.start()
