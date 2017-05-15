@@ -173,9 +173,14 @@ SonicServer.prototype.start = function() {
       "echoCancellation": false
     }
   };
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then(this.onStream_.bind(this))
-    .catch(this.onStreamError_.bind(this))
+  if (navigator.mediaDevices.getUserMedia === undefined) {
+    var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+  } else {
+    var getUserMedia = navigator.mediaDevices.getUserMedia
+  }
+  getUserMedia(constraints)
+  .then(this.onStream_.bind(this))
+  .catch(this.onStreamError_.bind(this))
 };
 
 /**
