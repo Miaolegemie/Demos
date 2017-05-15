@@ -52,13 +52,8 @@
   try {
     let SOUNDALPHABET = 'abdilpsu'
     // On some other machine:
-    // sserver = new SonicServer({alphabet: SOUNDALPHABET});
-    sserver = new SonicServer();
-    console.log(SonicServer)
-    let test = new SonicSocket()
-    for(let item in test.__proto__) {
-      alert(item)
-    }
+    sserver = new SonicServer({alphabet: SOUNDALPHABET});
+
     sserver.start()
 
 
