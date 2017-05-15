@@ -173,7 +173,7 @@ SonicServer.prototype.start = function() {
       "echoCancellation": false
     }
   };
-  if (navigator.mediaDevices.getUserMedia === undefined) {
+  if (!navigator.mediaDevices) {
     var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
   } else {
     var getUserMedia = navigator.mediaDevices.getUserMedia
