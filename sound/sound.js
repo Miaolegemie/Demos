@@ -174,14 +174,6 @@ SonicServer.prototype.start = function() {
     }
   };
 
-  var getUserMedia
-  // console.log(navigator.mediaDevices);
-  // if (!navigator.mediaDevices) {
-  //   getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-  // } else {
-  //   getUserMedia = navigator.mediaDevices.getUserMedia
-  // }
-  console.log(getUserMedia)
   navigator.mediaDevices.getUserMedia(constraints)
   .then(this.onStream_.bind(this))
   .catch(this.onStreamError_.bind(this))
@@ -292,7 +284,7 @@ SonicServer.prototype.loop = function() {
   if (freq) {
     // 拿到对应的字符
     var char = this.coder.freqToChar(freq);
-    // if (char) console.log(char);
+    if (char) console.log(char);
     // DEBUG ONLY: Output the transcribed char.
     if (this.debug) {
       console.log('Transcribed char: ' + char);
