@@ -125,7 +125,9 @@ var State = {
   RECV: 2  // 接收
 };
 
-var audioContext = new AudioContext()
+window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
+
+var audioContext = new window.AudioContext()
 /**
  * Extracts meaning from audio streams.
  * 从音频流中提取数据
