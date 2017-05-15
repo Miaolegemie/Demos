@@ -49,16 +49,16 @@
   <script src="./sound.js"></script>
 
   <script>
-  // try {
+  try {
     let SOUNDALPHABET = 'abdilpsu'
     // On some other machine:
     // sserver = new SonicServer({alphabet: SOUNDALPHABET});
     sserver = new SonicServer();
-    // console.log(SonicServer)
-    // let test = new SonicSocket()
-    // for(let item in test.__proto__) {
-    //   alert(item)
-    // }
+    console.log(SonicServer)
+    let test = new SonicSocket()
+    for(let item in test.__proto__) {
+      alert(item)
+    }
     sserver.start()
 
 
@@ -79,9 +79,9 @@
       dialog.style.opacity = 0
       sserver.off()
     })
-  // } catch (err) {
-  //   console.log(err)
-  // }
+  } catch (err) {
+    alert(err)
+  }
 
   </script>
 </body>
