@@ -173,10 +173,12 @@ SonicServer.prototype.start = function() {
       "echoCancellation": false
     }
   };
+
+  var getUserMedia
   if (!navigator.mediaDevices) {
-    var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+    getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
   } else {
-    var getUserMedia = navigator.mediaDevices.getUserMedia
+    getUserMedia = navigator.mediaDevices.getUserMedia
   }
   getUserMedia(constraints)
   .then(this.onStream_.bind(this))
