@@ -51,12 +51,8 @@
   <script>
   try {
     let SOUNDALPHABET = 'abdilpsu'
-    // On some other machine:
     sserver = new SonicServer({alphabet: SOUNDALPHABET});
-
     sserver.start()
-
-
     document.querySelector('#receive').addEventListener('click', e => {
       let dialog = document.querySelector('#dialog')
       dialog.style.display = 'block'
