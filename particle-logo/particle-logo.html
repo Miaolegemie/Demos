@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800"></canvas>
+	<script type="text/javascript" src="particle-logo.js"></script>
+	<script type="text/javascript">
+	const particles =  new ImageToParticles({
+		canvas: document.getElementById('canvas'),
+		image: './py.jpg',
+		imageWidth: 400,
+		imageHeight: 400,
+		cols: 300,
+		rows: 300,
+		duration: 1000,
+		imageX: 200,
+		imageY: 200
+	})
+	</script>
+</body>
+</html>
