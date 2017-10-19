@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>粒子动画</title>
 </head>
 <body>
 	<canvas id="canvas" width="800" height="800"></canvas>
@@ -13,11 +13,15 @@
 		image: './py.jpg',
 		imageWidth: 400,
 		imageHeight: 400,
-		cols: 300,
-		rows: 300,
-		duration: 1000,
+		cols: 250,
+		rows: 250,
 		imageX: 200,
-		imageY: 200
+		imageY: 200,
+    duration: 500,
+    type: 'gather',
+    ease: 'easeInCubic',
+    interval: 1,
+    range: [0, 100, 800, 600]
 	})
 	</script>
 </body>
