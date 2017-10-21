@@ -14,10 +14,6 @@ const EASE = {
     e /= f
     return -g * e * (e - 2) + a
   },
-  easeOutQuad(e, a, g, f) {
-    e /= f
-    return -g * e * (e - 2) + a
-  },
   easeInCubic(e, a, g, f) {
     e /= f
     return g * e * e * e + a
@@ -190,8 +186,8 @@ class ImageToParticles {
     image.src = options.image
     image.onload = () => {
       const defaultOptions = {
-        rows: image.height / 2,
-        cols: image.width / 2,
+        rows: Math.floor(image.height / 2),
+        cols: Math.floor(image.width / 2),
         startX: (options.imageX || 0) + (options.imageWidth || image.width) / 2,
         startY: (options.imageY || 0) + (options.imageHeight || image.height) / 2,
         imageX: 0,
