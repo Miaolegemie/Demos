@@ -222,7 +222,7 @@ class ImageToParticles {
         // R的坐标
         pos = [(parseInt(j * s_height - 1)) * this.options.imageWidth + (parseInt(i * s_width) - 1)] * 4
         // TODO: 过滤白色背景
-        if (data[pos] < 250) {
+        if (data[pos] < 240) {
           const particle = {
             x: parseInt(this.options.imageX + i * s_width + (Math.random() - 0.5) * s_width * 4),
             y: parseInt(this.options.imageY + j * s_height + (Math.random() - 0.5) * s_height * 4),
