@@ -251,7 +251,7 @@ class ImageToParticles {
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           const index = i * rows + j
--          this.particles[index].startX = range[0] + Math.random() * (range[2] - range[0])
+          this.particles[index].startX = range[0] + Math.random() * (range[2] - range[0])
           this.particles[index].startY = range[1] + Math.random() * (range[3] - range[1])
         }
       }
