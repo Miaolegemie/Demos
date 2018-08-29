@@ -2,6 +2,8 @@
 ----------------------------------
 图片转粒子外加动画
 
+[Demo](https://miaolegemie.github.io/Demos/particle-logo/particle-logo.html)
+
 ## 配置参数
 
 - canvas: 要在哪个 canvas 上绘制 （必填）
